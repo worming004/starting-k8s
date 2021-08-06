@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: standalone
+spec:
+  # it will deploy 3 pods
+  replicas: 3
+  selector:
+    matchLabels:
+      app: standalone
+  template:
+    metadata:
+      labels:
+        app: standalone
+    spec:
+      containers:
+      - name: standalone
+        image: <docker-account-name>/demo-standalone:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 3000
+        env:
+        - name: POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        imagePullPolicy: Always
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: standalone
+spec:
+  selector:
+    app: standalone
+  ports:
+  - port: 3000  
+    targetPort: 3000
+  type: LoadBalancer
