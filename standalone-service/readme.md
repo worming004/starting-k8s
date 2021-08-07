@@ -22,7 +22,7 @@ The second part is a description of a Service. It's used to describe that pods f
 
 Pod : unit of deployment. It can be a single container like this example, or multiple containers running together. (adding side-car for example)
 
-## run the service 
+## run the service
 
 Apply both Deployment and Service with `kubectl apply -f /deployment.yaml`.
 
@@ -32,6 +32,8 @@ After few seconds, pods will be deployed, service will be configured and a publi
 Run `kubectl get service` until the standalone line show you an EXTERNAL-IP. Then simply do `curl <ip-address>:3000/pod`
 
 ## deeper understanding
+
+Here is some commands and very brief informations of resources we play with.
 
 ### common commands
 
@@ -50,3 +52,39 @@ this command list you all resources of your type.
 
 ### pod
 
+A pod is a unit of deployment. It's running 1 or more containers. In our example, each 3 replicas are running 1 container.
+
+### replicaset
+
+A replica set described the desired state of pod
+
+### deployment
+
+A deployment describe the desired state of replicaset.
+As the control pipe look lîke this : Deployment -> ReplicaSet -> Pod, Deployment is able to describe desired state of pods.
+Deployments usefull to controll rollout of services.
+
+## delete a pod
+
+```bash
+kubectl get pod
+kubectl delete pod
+kubectl get pod
+```
+
+Even if we deleted a pod, this is one immediatly rebuild. As we have a deployment requesting 3 runnings pods, when one of them is killed, it's immediatly replaced
+
+## get pod logs
+
+get logs of a single pod with following command :
+
+```bash
+kubectl logs <pod-name>
+```
+
+Or you can use a selector filter with `-l`. As we described in *deployment.yaml* in lines 8-10, we applied a selector **app=standalone**. By doing this, you get logs of multiple pods.
+
+```bash
+kubectl logs -l <selector-filter>
+kubectl logs -l app=standalone
+```

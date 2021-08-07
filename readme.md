@@ -5,9 +5,11 @@ In this tutorial, we will use as much as possible docker to not have to install 
 
 Also, this tutorial is planned to have something running in a demo presentation of few hours max. It will not explain every components in details. If you are interested to have a deep understanding, I highly recommend you [Kubernetes in action](https://www.manning.com/books/kubernetes-in-action)
 
+Finally, this tutorial is not about Docker. Having a base understanding of what are images, containers, and be able to run an image locally is required.
+
 ## Prerequisite
 
-* docker installed locally, using linux container
+* docker installed locally, using linux container. A base knowledge is required.
 * having a azure account with a valid subscription. Take not of the id
 * a free account in hub.docker.com
 * optionnal : vscode with https://marketplace.visualstudio.com/items?itemName=ms-kubernetes-tools.vscode-kubernetes-tools extension
@@ -20,7 +22,7 @@ Also, this tutorial is planned to have something running in a demo presentation 
 
 If you do not wants to install az cli & kubectl cli, you can use this cli to run everything you will need.
 
-From build **buildcli** folder, build a cli container with `docker build -t demo-cli .`. Then access it with `docker run -it -v $(PWD):/workdir --rm demo-cli`.
+From build **buildcli** folder, build a cli container with `docker build -t demo-cli .`. From your current terminal, come back to the root *starting-l8s* directory, then access it with `docker run -it -v $(PWD):/workdir --rm demo-cli`. (from bash, replace $(PWD) by ${PWD}).
 
 From container, run `source /usr/share/bash-completion/bash_completion && source <(kubectl completion bash)` to add autocompletion for kubectl command
 
@@ -52,4 +54,4 @@ From now, after a few times, the kubernetes cluster is ready to use !
 I am expecting you to follow the tutorial in the following order.
 
 * ./standalone-service
-* ...
+* ./next if people enjoyed it ..
