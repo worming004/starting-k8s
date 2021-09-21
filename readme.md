@@ -46,8 +46,7 @@ Then, you are ready to create your cluster with `az aks create -g training -n de
 
 From now, after a few times, the kubernetes cluster is ready to use !
 
-> From now, if you want to **stop** the tutorial to not pay anymore for a small cluster, you can run `az aks stop -g trining -n default-cluster`. You will be able to restart later with `az aks start -g training -n default-cluster`
-> If you are finish with this tutorial and do not plan to come back, you can **delete** it with `az aks delete -g training -n default-cluster`
+> From now, if you want to **stop** the tutorial to not pay anymore for a small cluster, you can **delete** it with `az aks delete -g training -n default-cluster`. NB: it exists a **stop** command, but you will still pay a little bit for a service in sleep mode.
 
 ## next tutorial
 
