@@ -10,7 +10,7 @@ Finally, this tutorial is not about Docker. Having a base understanding of what 
 ## Prerequisite
 
 * docker installed locally, using linux container. A base knowledge is required.
-* having a azure account with a valid subscription. Take not of the id
+* having a azure account with a valid subscription. Take note of the id
 * a free account in hub.docker.com
 * optionnal : vscode with https://marketplace.visualstudio.com/items?itemName=ms-kubernetes-tools.vscode-kubernetes-tools extension
 
