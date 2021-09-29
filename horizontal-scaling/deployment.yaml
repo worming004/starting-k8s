@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: horizontal-scaling
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: horizontal-scaling
+  template:
+    metadata:
+      labels:
+        app: horizontal-scaling
+    spec:
+      containers:
+      - name: horizontal-scaling
+        image: <your-docker-account>/demo-horizontal-scaling
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "100m"
+        ports:
+        - containerPort: 8000

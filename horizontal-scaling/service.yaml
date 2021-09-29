@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: horizontal-scaling
+spec:
+  selector:
+    app: horizontal-scaling
+  ports:
+  - port: 8000
+    targetPort: 8000
+  type: LoadBalancer
