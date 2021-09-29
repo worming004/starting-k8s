@@ -53,4 +53,5 @@ From now, after a few times, the kubernetes cluster is ready to use ! To configu
 I am expecting you to follow the tutorial in the following order.
 
 * ./standalone-service
+* ./horizontal-scaling
 * ./next if people enjoyed it ..

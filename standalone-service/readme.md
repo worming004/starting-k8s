@@ -72,7 +72,9 @@ kubectl delete pod
 kubectl get pod
 ```
 
-Even if we deleted a pod, this is one immediatly rebuild. As we have a deployment requesting 3 runnings pods, when one of them is killed, it's immediatly replaced
+Even if we deleted a pod, this is one immediatly rebuild. As we have a deployment requesting 3 runnings pods, when one of them is killed, it's immediatly replaced.
+
+It is because the Deployment resources is asked to ensure there is always 3 running pod. So, when a pod is deleted, it is immediatly replaced with another one.
 
 ## get pod logs
 

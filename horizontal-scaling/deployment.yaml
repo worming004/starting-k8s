@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: horizontal-scaling
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: horizontal-scaling
