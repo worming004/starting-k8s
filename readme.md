@@ -40,7 +40,7 @@ If you already have a resource group named *training*, feel free to replace it w
 
 Then, you are ready to create your cluster with `az aks create -g training -n default-cluster -s Standard_A2_v2 -c 2 --generate-ssh-keys`
 
-From now, after a few times, the kubernetes cluster is ready to use ! To configure your kubectl to reach your new cluster, do `az aks get-credentials`
+After a few times, the kubernetes cluster is ready to use ! To configure your kubectl to reach your new cluster, do `az aks get-credentials`
 
 > From now, if you want to **stop** the tutorial to not pay anymore for a small cluster, you can **delete** it with `az aks delete -g training -n default-cluster`. NB: it exists a **stop** command, but you will still pay a little bit for a service in sleep mode.
 
