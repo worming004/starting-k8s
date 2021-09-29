@@ -22,11 +22,9 @@ Finally, this tutorial is not about Docker. Having a base understanding of what 
 
 If you do not wants to install az cli & kubectl cli, you can use this cli to run everything you will need.
 
-From build **buildcli** folder, build a cli container with `docker build -t demo-cli .`. From your current terminal, come back to the root *starting-k8s* directory, then access it with `docker run -it -v $(PWD):/workdir --rm demo-cli`. (from bash, replace $(PWD) by ${PWD}).
+From build **buildcli** folder, build a cli container with `docker build -t demo-cli .`. From your current terminal, come back to the root *starting-k8s* directory, then access it with `docker run -it -v ${PWD}:/workdir --rm demo-cli`. (from powershell, replace ${PWD} by $(PWD)).
 
 #### Login
-
-Run an azure cli from docker with `docker run -it --rm mcr.microsoft.com/azure-cli`. Now your current terminal is using a bash with azure cli installed. All commands are invoked with `az`.
 
 Before doing more actions, you need to login to your account, with `az login`. Follow the instruction by opening url with your browser, and login to your account.
 
