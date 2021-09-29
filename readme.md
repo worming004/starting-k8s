@@ -24,8 +24,6 @@ If you do not wants to install az cli & kubectl cli, you can use this cli to run
 
 From build **buildcli** folder, build a cli container with `docker build -t demo-cli .`. From your current terminal, come back to the root *starting-k8s* directory, then access it with `docker run -it -v $(PWD):/workdir --rm demo-cli`. (from bash, replace $(PWD) by ${PWD}).
 
-From container, run `source /usr/share/bash-completion/bash_completion && source <(kubectl completion bash)` to add autocompletion for kubectl command
-
 #### Login
 
 Run an azure cli from docker with `docker run -it --rm mcr.microsoft.com/azure-cli`. Now your current terminal is using a bash with azure cli installed. All commands are invoked with `az`.
