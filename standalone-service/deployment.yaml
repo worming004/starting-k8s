@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: standalone
-        image: <docker-account-name>/demo-standalone:latest
+        image: worming/demo-standalone:latest
         resources:
           limits:
             memory: "128Mi"

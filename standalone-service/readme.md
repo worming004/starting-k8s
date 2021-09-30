@@ -4,7 +4,7 @@ In this tutorial, we will learn how to deploy a service without any dependency. 
 
 ## build the image
 
-Build the image with `docker build -t <docker-account-name>/demo-standalone:latest` then push it with on your docker registry with `docker push <docker-account-name>/demo-standalone:latest`. By pushing it, your container is available on hub.docker.com, and accessible from your current k8s cluster for downlaod.
+Build the image with `docker build -t <docker-account-name>/demo-standalone:latest .` then push it with on your docker registry with `docker push <docker-account-name>/demo-standalone:latest`. By pushing it, your container is available on hub.docker.com, and accessible from your current k8s cluster for downlaod.
 
 ## adapt the deployment.yaml
 
@@ -24,7 +24,7 @@ Pod : unit of deployment. It can be a single container like this example, or mul
 
 ## run the service
 
-Apply both Deployment and Service with `kubectl apply -f /deployment.yaml`.
+Apply both Deployment and Service with `kubectl apply -f ./deployment.yaml`.
 
 ## test the service with curl
 
@@ -68,7 +68,7 @@ Deployments usefull to controll rollout of services.
 
 ```bash
 kubectl get pod
-kubectl delete pod
+kubectl delete pod <select pod name>
 kubectl get pod
 ```
 

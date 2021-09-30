@@ -32,7 +32,7 @@ You should be ready to run any azure commands now.
 
 ### Create a resource group and the cluster
 
-First, you need to create a resource group that will handle your cluster. Simply run `az group create --location <location> --name training`.
+First, you need to create a resource group that will handle your cluster. Simply run `az group create --location <location> --name training`. e.g.: `az group create --location westeurope --name training`
 
 The location list can be found by double tapping *tab* when you already entered `az group create --location ` with white space. If you do not know what to put, you can select *westeurope*
 
@@ -40,7 +40,7 @@ If you already have a resource group named *training*, feel free to replace it w
 
 Then, you are ready to create your cluster with `az aks create -g training -n default-cluster -s Standard_A2_v2 -c 2 --generate-ssh-keys`
 
-After a few times, the kubernetes cluster is ready to use ! To configure your kubectl to reach your new cluster, do `az aks get-credentials`
+After a few times, the kubernetes cluster is ready to use ! To configure your kubectl to reach your new cluster, do `az aks get-credentials -g training -n default-clusterm`
 
 > From now, if you want to **stop** the tutorial to not pay anymore for a small cluster, you can **delete** it with `az aks delete -g training -n default-cluster`. NB: it exists a **stop** command, but you will still pay a little bit for a service in sleep mode.
 
