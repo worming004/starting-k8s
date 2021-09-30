@@ -4,7 +4,7 @@ In this tutorial, we will learn how to deploy a service without any dependency. 
 
 ## build the image
 
-Build the image with `docker build -t <docker-account-name>/demo-standalone:latest .` then push it with on your docker registry with `docker push <docker-account-name>/demo-standalone:latest`. By pushing it, your container is available on hub.docker.com, and accessible from your current k8s cluster for downlaod.
+Build the image with `docker build -t <docker-account-name>/demo-standalone:latest .` then push it with on your docker registry with `docker push <docker-account-name>/demo-standalone:latest`. By pushing it, your container is available on hub.docker.com, and accessible from your current k8s cluster for download.
 
 ## adapt the deployment.yaml
 
