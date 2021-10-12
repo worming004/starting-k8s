@@ -21,6 +21,7 @@ func (f fibonacci) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte(strconv.Itoa(value)))
 }
 
+// valid implementation, by cost a lot of CPU when requested position is high.
 func (f fibonacci) getValue(pos int) int {
 	if pos == 0 || pos == 1 {
 		return 1
