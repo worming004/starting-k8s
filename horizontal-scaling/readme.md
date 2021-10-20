@@ -2,7 +2,8 @@
 
 ## deploy
 build image as usually with `<your-docker-account>/horizontal-scaling` tag name
-deploy service by replacing <your-docker-account> from deployment file.
+`docker build -t <your-docker-account>/horizontal-scaling .`
+deploy service by replacing <your-docker-account> from deployment file (deployment.yaml)
 deploy with `kubectl apply -f ./deployment.yaml -f service.yaml`
 
 After few seconds, you will find the service IP by doing `kubectl get svc`. This is because we also declared a service resource, that request to Azure to bind an IP address
@@ -22,4 +23,4 @@ this command autoscale the deployment *horizontal-scaling*. the min replicas num
 
 run `go run ./loadtest/main.go -number 10 -address http://20.82.159.140:8000/fib/45` to run 10 parallel worker that will request the *address* in an infinite loop.
 
-if you have not any go compiler installed, you can use docker with `docker run --rm -v ${PWD}/loadtest:/app golang go run /app/main.go -h`
+if you have not any go compiler installed, you can use docker with `docker run --rm -v ${PWD}/loadtest:/app golang go run /app/main.go -h` from powershell
