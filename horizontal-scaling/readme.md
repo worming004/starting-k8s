@@ -13,7 +13,7 @@ After few seconds, you will find the service IP by doing `kubectl get svc`. This
 
 `curl http://<ip-address>:8000/fib/30` to get fibonacci value for position 30
 
-## apply automated scale
+## apply automated scale
 
 `kubectl autoscale deployment horizontal-scaling --cpu-percent=30 --min=1 --max=5`
 this command autoscale the deployment *horizontal-scaling*. the min replicas number is 1, and max is 5. the Horizontal Pod Scaling (HPA) will try to balance number of replicates in order that cpu usage is near 30% by each replicas
