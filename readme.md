@@ -22,7 +22,7 @@ Finally, this tutorial is not about Docker. Having a base understanding of what 
 
 If you do not wants to install az cli & kubectl cli, you can use this cli to run everything you will need.
 
-From build **buildcli** folder, build a cli container with `docker build -t demo-cli .`. From your current terminal, come back to the root *starting-k8s* directory, then access it with `docker run -it -v ${PWD}:/workdir --rm demo-cli`. (from powershell, replace ${PWD} by $(PWD)).
+From build **buildcli** folder, build a cli container with `docker build -t demo-cli .`. From your current terminal, come back to the root *starting-k8s* directory, then access it with `docker run -it -v ${PWD}:/workdir --rm demo-cli`. (from powershell, replace `${PWD}` by `$(PWD)`).
 
 #### Login
 
